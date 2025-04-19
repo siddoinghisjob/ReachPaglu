@@ -1,0 +1,187 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Twitter Handle Rater</title>
+  <style>
+    body {
+      width: 320px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      padding: 0;
+      margin: 0;
+      color: #0f1419;
+    }
+    
+    .header {
+      padding: 16px;
+      border-bottom: 1px solid #ebeef0;
+    }
+    
+    h2 {
+      margin: 0;
+      color: #1DA1F2;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    
+    .section {
+      padding: 16px;
+      border-bottom: 1px solid #ebeef0;
+    }
+    
+    .button {
+      background-color: #1DA1F2;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 9999px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+      font-size: 14px;
+      transition: background-color 0.2s;
+    }
+    
+    .button:hover {
+      background-color: #1a91da;
+    }
+    
+    .button:active {
+      transform: scale(0.98);
+    }
+    
+    h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    
+    .user-item {
+      padding: 8px 0;
+      border-bottom: 1px solid #ebeef0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+    
+    .user-item:last-child {
+      border-bottom: none;
+    }
+    
+    .user-item:hover {
+      background-color: #f7f9fa;
+    }
+    
+    .genuine {
+      color: #4CAF50;
+      font-weight: bold;
+    }
+    
+    .farmer {
+      color: #f44336;
+      font-weight: bold;
+    }
+    
+    .status {
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #536471;
+      text-align: center;
+    }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .genuine-badge {
+      background-color: rgba(76, 175, 80, 0.1);
+      color: #4CAF50;
+    }
+    
+    .farmer-badge {
+      background-color: rgba(244, 67, 54, 0.1);
+      color: #f44336;
+    }
+    
+    .stats-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+      margin-bottom: 8px;
+    }
+    
+    .stat-box {
+      text-align: center;
+      flex: 1;
+      padding: 8px;
+      background-color: #f7f9fa;
+      border-radius: 8px;
+      margin: 0 4px;
+    }
+    
+    .stat-value {
+      font-size: 16px;
+      font-weight: bold;
+      color: #0f1419;
+    }
+    
+    .stat-label {
+      font-size: 12px;
+      color: #536471;
+    }
+    
+    .username {
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>Twitter Handle Rater</h2>
+  </div>
+  
+  <div class="section">
+    <p style="margin-top: 0; margin-bottom: 16px; font-size: 14px;">Rate Twitter profiles as genuine or engagement farmers and see community ratings.</p>
+    <button id="rate-current" class="button">Rate Current Profile</button>
+  </div>
+  
+  <div class="section">
+    <h3>Community Stats</h3>
+    <div class="stats-container">
+      <div class="stat-box">
+        <div id="profiles-rated" class="stat-value">-</div>
+        <div class="stat-label">Profiles Rated</div>
+      </div>
+      <div class="stat-box">
+        <div id="genuine-count" class="stat-value">-</div>
+        <div class="stat-label">Genuine Votes</div>
+      </div>
+      <div class="stat-box">
+        <div id="farmer-count" class="stat-value">-</div>
+        <div class="stat-label">Farmer Votes</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h3>Your Recent Ratings</h3>
+    <div id="recent-ratings">
+      <div class="status">No recently rated profiles</div>
+    </div>
+  </div>
+  
+  <div class="status">
+    Visit any Twitter profile page to rate and view community ratings
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
